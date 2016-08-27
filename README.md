@@ -1,2 +1,2 @@
-# AncientTechnology
-Ludum Dare 36
+# Ancient Technology
+Made for Ludum Dare 36.
