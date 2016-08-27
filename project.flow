@@ -17,7 +17,8 @@
 
     app: {
       name: 'ancient_technology',
-      package: 'com.incredibleape.games'
+      package: 'com.incredibleape.games',
+      codepaths: ['./src', './src/states']
     },
 
     build: {
