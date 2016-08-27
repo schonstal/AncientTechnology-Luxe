@@ -1,0 +1,33 @@
+{
+  luxe: {
+    window: {
+      width: 960,
+      height: 640,
+      title: 'luxe empty project',
+      fullscreen: false,
+      resizable: true,
+      borderless: false
+    }
+  },
+
+  project: {
+    name: 'Ancient Technology',
+    version: '0.0.1',
+    author: 'Incredible Ape',
+
+    app: {
+      name: 'ancient_technology',
+      package: 'com.incredibleape.games'
+    },
+
+    build: {
+      dependencies: {
+        luxe: '*',
+      }
+    },
+
+    files: {
+      assets: 'assets/'
+    }
+  }
+}
