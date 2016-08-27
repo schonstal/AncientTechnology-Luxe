@@ -6,7 +6,7 @@ import luxe.Vector;
 import luxe.States;
 
 class Main extends luxe.Game {
-  public static var states:States;
+  var states:States;
 
   override function config(config:GameConfig) {
     config.window.title = 'Ancient Technology';
@@ -18,11 +18,8 @@ class Main extends luxe.Game {
   }
 
   override function ready() {
-    states = new States({ name: 'states' });
-    states.add(new Menu());
-    // Add more states here
-
-    states.set('menu');
+    createStates();
+    setupEventListeners();
   }
 
   override function onkeyup(e:KeyEvent) {
@@ -32,5 +29,22 @@ class Main extends luxe.Game {
   }
 
   override function update(dt:Float) {
+  }
+
+  function setupEventListeners() {
+    Luxe.events.listen('state.change', onChangeState);
+  }
+
+  function createStates() {
+    states = new States({ name: 'states' });
+    states.add(new Menu());
+    states.add(new Play());
+    // Add more states here
+
+    states.set('menu');
+  }
+
+  function onChangeState(e) {
+    states.set(e.state);
   }
 }
