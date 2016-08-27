@@ -1,8 +1,13 @@
-
 import luxe.GameConfig;
 import luxe.Input;
+import luxe.Sprite;
+import luxe.Color;
+import luxe.Vector;
+import luxe.States;
 
 class Main extends luxe.Game {
+  public static var states:States;
+
   override function config(config:GameConfig) {
     config.window.title = 'Ancient Technology';
     config.window.width = 960;
@@ -13,9 +18,14 @@ class Main extends luxe.Game {
   }
 
   override function ready() {
+    states = new States({ name: 'states' });
+    states.add(new Menu());
+    // Add more states here
+
+    states.set('menu');
   }
 
-  override function onkeyup( e:KeyEvent ) {
+  override function onkeyup(e:KeyEvent) {
     if(e.keycode == Key.escape) {
       Luxe.shutdown();
     }
