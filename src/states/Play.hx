@@ -9,13 +9,15 @@ class Play extends luxe.State {
 
   public function new() {
     super({ name: 'play' });
-    player = new Player();
   }
 
   override function init() {
   }
 
   override function onenter<T>(_:T) {
+    if (player == null) {
+      player = new Player();
+    }
   }
 
   override function onleave<T>(_:T) {
