@@ -10,8 +10,8 @@ class Main extends luxe.Game {
 
   override function config(config:GameConfig) {
     config.window.title = 'Ancient Technology';
-    config.window.width = 960;
-    config.window.height = 640;
+    config.window.width = 640;
+    config.window.height = 360;
     config.window.fullscreen = false;
 
     return config;
